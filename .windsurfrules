@@ -1,0 +1,112 @@
+# Explicit Rule Declaration
+
+ Every time you chose to apply a rule( s ), explicitly state the rule( s ) in the output.You can abbreviate the rule description to a single word or phrase
+
+ ## Approved Frameworks and Dependencies
+ The following frameworks, libraries, and tools must be used for all projects unless the user specifies additional ones at runtime:
+ -React (with Vite for project setup)
+ -Tailwind CSS (for utility-first styling)
+ -Framer Motion (for animations)
+ -TypeScript (ensure strong type safety throughout the code)
+ -Clerk (for authentication and user management)
+ -Firebase (used as the backend-as-a-service)
+ -Node.js (for backend development) 
+ -Favicons (for all UI/UX iconography)
+
+## Code Style and  Structure
+-Write concise, clean, and maintainable code.
+-Use functional and declarative programming patterns;avoid classes
+-Prefer iteration and modulatization over code duplication.
+-Use descriptive variable names with auxilary verbs(e.g., isLoading, haseError, etc.) 
+
+## Syntax and Formatting
+-Use 'function' keyword for pure functions
+-Avoid unecessary curly braces in conditional
+-Use declarative Jsx
+-Implement proper Typescript discriminated unions for message types
+
+## UI and Styling
+-Implement Tailwind CSS for styling
+-Use Framer Motion for animations
+-Use Lucide React for UI icons
+
+## Perfomance Optimization
+-Minimize bundle size using code splitting
+-Implement lazy loading for non-critical components
+-Optimize content script injection
+-Use proper caching strategies
+-Implement proper cleanup for event listeners and observers
+
+## Security 
+-Implement content security policies
+-Sanitize user input
+-Handle sensitive data properly
+-Follow Chrome Extension best practices
+-Implement proper CORS configuration
+-Implement proper HTTP methods
+
+## Error Handling
+-Implement proper error handling
+-Handle unexpected errors and provide user-friendly feedback
+-Implement error loggin
+
+## Testing
+-Write unit test for utilities and components
+-Implement EZE tests for critical components
+-Test accross multiple browsers and devices (Versions)
+-Test memory usage and performance
+
+## Git Usage
+comit messages prefixes:
+-"fix" for bug fixes 
+-"feat" for new features
+-"perf" for performance improvements
+-"docs" for documentation changes
+-"style" for formatting changes
+-"refactor" for code refactoring
+-"test" for adding tests
+-"chore" for changes that don't modify src or test files
+-"build" for changes that affect the build system or external dependencies
+
+Rules:
+-Use lowercase for commit messages
+-Keep the summary line concise
+-Include description for non-obvious changes
+-Referance issue numbers when applicable
+
+## Documentation
+-Maintain a clear README with set instructions
+-Document API interactions and workflows
+-Keep manifest.json well documented
+-Include comments for complex logic
+-Document permissions requirements
+
+## Development workflow
+-Use proper version control
+-Implent proper code review process
+-Test in multiple environments
+-Follow semantic versioning for releases
+-Maintain change logs
+
+## Design Compliance
+You must build all layouts and functionality based on the provided instructions and references
+
+## Runtime Flexibility for Frameworks
+-If the user specifies additional frameworks or tools at runtime, You must strictly integrate them without altering other parts of the codebase unless instructed
+Example: “Add Prisma for database handling” or “Integrate GraphQL.”
+-You must state the changes being made and the reason for each modification
+
+## Modification Scope
+When making modifications, You must:
+-Only work on the specific item(s) specified by the user
+-Avoid modifying unrelated parts of the codebase
+-Refrain from adding new files, dependencies, or features unlessexplicitly requested
+
+## No Unnecessary Additions
+-You must not introduce unnecessary files, dependencies, or frameworks  that are not part of the specified rules or runtime instructions
+
+## Output Transparency
+All outputs must include:
+-The rule(s) applied
+-Frameworks, dependencies, and tools used
+-A summary of runtime instructions followed
