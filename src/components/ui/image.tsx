@@ -1,5 +1,6 @@
 import { ImageProps } from 'next/image';
 import Image from 'next/image';
+import { useState } from 'react';
 
 // Define image paths type
 type ImagePaths = {
@@ -21,6 +22,8 @@ const imagePaths: ImagePaths = {
 interface CustomImageProps extends Omit<ImageProps, 'src'> {
   src: string;
   fallback?: string;
+  width?: number;
+  height?: number;
 }
 
 // Use fallback images with proper typing
@@ -28,18 +31,34 @@ export function CustomImage({
   src, 
   fallback = '/logos/placeholder-logo.png', 
   alt,
+  width = 500,
+  height = 300,
   ...props 
 }: CustomImageProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <Image
-      src={src}
-      alt={alt || 'Image'}
-      onError={(e) => {
-        const img = e.currentTarget as HTMLImageElement;
-        img.src = fallback;
-      }}
-      {...props}
-    />
+    <div className="relative overflow-hidden">
+      {isLoading && (
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" />
+      )}
+      <Image
+        src={src}
+        alt={alt || 'Image'}
+        width={width}
+        height={height}
+        loading="lazy"
+        onLoadingComplete={() => setIsLoading(false)}
+        onError={(e) => {
+          const img = e.currentTarget as HTMLImageElement;
+          img.src = fallback;
+        }}
+        className={`transition-opacity duration-300 ${
+          isLoading ? 'opacity-0' : 'opacity-100'
+        }`}
+        {...props}
+      />
+    </div>
   );
 }
 
